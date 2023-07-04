@@ -1,0 +1,37 @@
+#+NAME: contract
+dev-1688478129531-75133228216882
+
+
+#+begin_src sh :results output
+near call dev-1688478129531-75133228216882 new '{}' --account-id eamondev.testnet
+#+end_src
+
+#+begin_src sh :results output
+near call dev-1688478129531-75133228216882 mint '{"token_id": "token-01", "title": "SBU 01", "description" : "first nft bootcamp", "media" : "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80"}' --account-id eamondev.testnet
+#+end_src
+
+#+RESULTS:
+: Scheduling a call: dev-1688478129531-75133228216882.mint({"token_id": "token-01", "title": "SBU 01", "description" : "first nft bootcamp", "media" : "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80"})
+: Doing account.functionCall()
+: Transaction Id 71D2Dtw8viH1R1eE68AdTNYc9m9M9hSGBigPT39TxecA
+: To see the transaction in the transaction explorer, please open this url in your browser
+: https://explorer.testnet.near.org/transactions/71D2Dtw8viH1R1eE68AdTNYc9m9M9hSGBigPT39TxecA
+: ''
+
+#+begin_src sh :results output
+near view dev-1688478129531-75133228216882 get_token_by_id '{"token_id": "token-01"}'
+#+end_src
+
+#+RESULTS:
+#+begin_example
+View call: dev-1688478129531-75133228216882.get_token_by_id({"token_id": "token-01"})
+{
+  token_id: 'token-01',
+  owner_id: 'eamondev.testnet',
+  metadata: {
+    title: 'SBU 01',
+    description: 'first nft bootcamp',
+    media: 'https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80'
+  }
+}
+#+end_example
