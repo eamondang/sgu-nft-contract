@@ -1,4 +1,9 @@
-use near_sdk::borsh::{self, BorshDeserialize, BorshSerialize};
+use crate::*;
+
+use near_sdk::{
+  borsh::{self, BorshDeserialize, BorshSerialize},
+  near_bindgen,
+};
 
 #[derive(BorshDeserialize, BorshSerialize)]
 pub struct NFTContractMetadata {
@@ -25,4 +30,11 @@ pub struct TokenMetadata {
   pub extra: Option<String>,
   pub reference: Option<String>,
   pub reference_hash: Option<String>,
+}
+
+#[derive(BorshDeserialize, BorshSerialize)]
+pub struct Token {
+  pub token_id: Option<String>,
+  pub owner_id: Option<String>,
+  pub metadata: TokenMetadata,
 }
